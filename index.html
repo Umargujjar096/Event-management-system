@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Event Management System</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <h1>Event Management System</h1>
+            <p>Create, manage and organize your events</p>
+        </div>
+    </header>
+
+
+    <main class="container">
+
+        <!-- Event Form -->
+        <section class="form-section">
+
+            <h2 id="formHeading">Add New Event</h2>
+
+            <form id="eventForm">
+
+                <input type="hidden" id="eventId">
+
+                <div class="form-group">
+                    <label for="eventTitle">Event Title</label>
+
+                    <input
+                        type="text"
+                        id="eventTitle"
+                        placeholder="Enter event title"
+                        required
+                    >
+                </div>
+
+
+                <div class="form-row">
+
+                    <div class="form-group">
+                        <label for="createdDate">Created Date</label>
+
+                        <input
+                            type="date"
+                            id="createdDate"
+                            required
+                        >
+                    </div>
+
+
+                    <div class="form-group">
+                        <label for="eventDate">Event Date</label>
+
+                        <input
+                            type="date"
+                            id="eventDate"
+                            required
+                        >
+                    </div>
+
+                </div>
+
+
+                <div class="form-group">
+                    <label for="eventType">Event Type</label>
+
+                    <select id="eventType" required>
+
+                        <option value="">
+                            Select Event Type
+                        </option>
+
+                        <option value="Sports Gala">
+                            Sports Gala
+                        </option>
+
+                        <option value="Farewell Party">
+                            Farewell Party
+                        </option>
+
+                        <option value="Seminar">
+                            Seminar
+                        </option>
+
+                        <option value="Workshop">
+                            Workshop
+                        </option>
+
+                        <option value="Other">
+                            Other
+                        </option>
+
+                    </select>
+                </div>
+
+
+                <div class="form-group">
+                    <label for="description">Description</label>
+
+                    <textarea
+                        id="description"
+                        rows="5"
+                        placeholder="Enter event description"
+                        required
+                    ></textarea>
+                </div>
+
+
+                <div class="form-buttons">
+
+                    <button
+                        type="submit"
+                        class="btn btn-primary"
+                        id="submitButton"
+                    >
+                        Add Event
+                    </button>
+
+                    <button
+                        type="button"
+                        class="btn btn-secondary hidden"
+                        id="cancelButton"
+                    >
+                        Cancel Edit
+                    </button>
+
+                </div>
+
+            </form>
+
+        </section>
+
+
+        <!-- Events Section -->
+        <section class="events-section">
+
+            <div class="events-header">
+
+                <div>
+                    <h2>All Events</h2>
+                    <p id="eventCount">0 events</p>
+                </div>
+
+            </div>
+
+
+            <!-- Events will be displayed here -->
+            <div
+                id="eventsContainer"
+                class="events-container"
+            ></div>
+
+
+            <!-- Empty State -->
+            <div
+                id="emptyState"
+                class="empty-state"
+            >
+                <div class="empty-icon">📅</div>
+
+                <h3>No Events Found</h3>
+
+                <p>
+                    Add your first event using the form above.
+                </p>
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- Event Details Modal -->
+    <div
+        id="eventModal"
+        class="modal"
+    >
+
+        <div class="modal-content">
+
+            <button
+                class="modal-close"
+                id="modalClose"
+            >
+                &times;
+            </button>
+
+            <div id="modalBody"></div>
+
+        </div>
+
+    </div>
+
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+
+</body>
+</html>
